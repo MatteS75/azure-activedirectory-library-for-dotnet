@@ -1,7 +1,8 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.3;uap10.0.17763;MonoAndroid8.1;Xamarin.iOS10</TargetFrameworks>
+<!--    <TargetFrameworks>net45;netstandard1.3;uap10.0.17763;MonoAndroid8.1;Xamarin.iOS10</TargetFrameworks>-->
+    <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
     <Product>Microsoft.IdentityModel.Clients.ActiveDirectory ($(TargetFramework))</Product>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\build\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
@@ -177,6 +178,7 @@
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <!-- 4.3.0 has CVE-2019-0657, CVE-2019-0980, CVE-2019-0981 -->
     <PackageReference Include="System.Private.Uri" Version="4.3.2" />
+    <PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0" />
   </ItemGroup>
 
   <!-- This is here to workaround designer issues so VS sees them appropriately -->
