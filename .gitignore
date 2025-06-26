@@ -1,4 +1,6 @@
 **/.vs/
+**/.idea/
+*.DotSettings
 **/bin/
 **/obj/
 **/packages/
