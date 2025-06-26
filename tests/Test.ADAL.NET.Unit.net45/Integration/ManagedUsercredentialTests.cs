@@ -164,7 +164,7 @@ namespace Test.ADAL.NET.Integration
             }
         }
 
-#if DESKTOP // UserPasswordCredential available only on net45
+// #if DESKTOP // UserPasswordCredential available only on net45
         [TestMethod]
         [Description("Test for AcquireToken with an empty cache")]
         public async Task AcquireTokenWithEmptyCache_GetsTokenFromServiceTestAsync()
@@ -522,6 +522,6 @@ namespace Test.ADAL.NET.Integration
                 Assert.AreEqual(0, context.TokenCache.Count);
             }
         }
-#endif
+// #endif
     }
 }

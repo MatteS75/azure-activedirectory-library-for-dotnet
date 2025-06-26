@@ -41,7 +41,7 @@ using Microsoft.Identity.Json.Serialization;
 
 namespace Microsoft.Identity.Json.Utilities
 {
-#if (DOTNET || PORTABLE || PORTABLE40) && !ANDROID && !NET_CORE
+#if false && (DOTNET || PORTABLE || PORTABLE40) && !ANDROID && !NET_CORE
     [Flags]
     internal enum MemberTypes
     {
@@ -52,7 +52,7 @@ namespace Microsoft.Identity.Json.Utilities
     }
 #endif
 
-#if PORTABLE && !ANDROID && !NET_CORE && !WINDOWS_APP
+#if false && PORTABLE && !ANDROID && !NET_CORE && !WINDOWS_APP
     [Flags]
     internal enum BindingFlags
     {

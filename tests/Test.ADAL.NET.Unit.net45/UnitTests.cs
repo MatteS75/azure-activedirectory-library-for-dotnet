@@ -242,7 +242,7 @@ namespace Test.ADAL.NET.Unit
             Assert.AreEqual(hash, "ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=");
         }
 
-#if DESKTOP // on netcore the parameters are different
+// #if DESKTOP // on netcore the parameters are different
         [TestMethod]
         [Description("Test for ADAL Id")]
         public void AdalIdDesktopTest()
@@ -264,7 +264,7 @@ namespace Test.ADAL.NET.Unit
             Assert.IsNotNull(adalParameters[AdalIdParameter.OS]);
             Assert.IsFalse(adalParameters.ContainsKey(AdalIdParameter.DeviceModel));
         }
-#endif
+// #endif
 
         [TestMethod]
         [Description("Test for Id Token Parsing")]

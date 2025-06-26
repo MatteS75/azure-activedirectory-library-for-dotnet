@@ -61,6 +61,13 @@ namespace Test.ADAL.NET.Integration
             ResetInstanceDiscovery();
         }
 
+        public string findTestResource(string fileName)
+        {
+            if (File.Exists(Path.Combine(Environment.CurrentDirectory, fileName)))
+                return fileName;
+            return Path.Combine(Environment.CurrentDirectory, "Resources", fileName);
+        }
+
         public void ResetInstanceDiscovery()
         {
             InstanceDiscovery.InstanceCache.Clear();
@@ -71,7 +78,7 @@ namespace Test.ADAL.NET.Integration
             httpManager.AddInstanceDiscoveryMockHandler();
         }
 
-#if DESKTOP // UserPasswordCredential only supported on net45
+// #if DESKTOP // UserPasswordCredential only supported on net45
         [TestMethod]
         [Description("Test for AcquireToken with empty cache")]
         public async Task AcquireTokenWithEmptyCache_GetsTokenFromServiceTestAsync()
@@ -114,7 +121,7 @@ namespace Test.ADAL.NET.Integration
                         Method = HttpMethod.Get,
                         ResponseMessage = new HttpResponseMessage(HttpStatusCode.OK)
                         {
-                            Content = new StringContent(File.ReadAllText("TestMex.xml"))
+                            Content = new StringContent(File.ReadAllText(findTestResource("TestMex.xml")))
                         }
                     });
 
@@ -124,7 +131,7 @@ namespace Test.ADAL.NET.Integration
                         Method = HttpMethod.Post,
                         ResponseMessage = new HttpResponseMessage(HttpStatusCode.OK)
                         {
-                            Content = new StringContent(File.ReadAllText("WsTrustResponse.xml"))
+                            Content = new StringContent(File.ReadAllText(findTestResource("WsTrustResponse.xml")))
                         }
                     });
 
@@ -158,7 +165,7 @@ namespace Test.ADAL.NET.Integration
         }
 
 
-#endif
+// #endif
 
         [TestMethod]
         [Description("Integrated auth using upn of federated user.")]

@@ -52,7 +52,7 @@ using AuthorityType = Microsoft.IdentityModel.Clients.ActiveDirectory.Internal.I
 
 namespace Test.ADAL.NET.Unit
 {
-#if DESKTOP
+// #if DESKTOP
     [TestClass]
     public class SecureClientTests
     {
@@ -85,5 +85,5 @@ namespace Test.ADAL.NET.Unit
             Assert.AreEqual("x", paramStr["client_secret"]);
         }
     }
-#endif
+// #endif
 }

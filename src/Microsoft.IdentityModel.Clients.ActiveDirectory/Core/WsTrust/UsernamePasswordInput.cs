@@ -25,7 +25,7 @@
 //
 //------------------------------------------------------------------------------
 
-#if DESKTOP
+#if DESKTOP || PORTABLE
 using System.Security;
 using static System.Runtime.InteropServices.Marshal;
 #endif
@@ -45,7 +45,7 @@ namespace Microsoft.Identity.Core
     internal sealed class UsernamePasswordInput : IUsernameInput
     {
         public string UserName { get; set; }
-#if DESKTOP || NET_CORE
+#if DESKTOP || NET_CORE || PORTABLE
         private SecureString securePassword;
 #endif
         private string password;
@@ -57,7 +57,7 @@ namespace Microsoft.Identity.Core
             this.UserName = userName;
         }
 
-#if DESKTOP || NET_CORE
+#if DESKTOP || NET_CORE || PORTABLE
         public UsernamePasswordInput(string userName, SecureString securePassword)
         {
             this.securePassword = securePassword;
@@ -68,7 +68,7 @@ namespace Microsoft.Identity.Core
         public char[] PasswordToCharArray() 
         {
             
-#if DESKTOP || NET_CORE
+#if DESKTOP || NET_CORE || PORTABLE
             if (securePassword != null)
             {
                 var output = new char[securePassword.Length];
@@ -91,7 +91,7 @@ namespace Microsoft.Identity.Core
         {
 
             bool hasSecurePassword = false;
-#if DESKTOP || NET_CORE
+#if DESKTOP || NET_CORE || PORTABLE
             hasSecurePassword = this.securePassword != null;
 #endif
             bool hasPlainPassowrd = !string.IsNullOrEmpty(password);

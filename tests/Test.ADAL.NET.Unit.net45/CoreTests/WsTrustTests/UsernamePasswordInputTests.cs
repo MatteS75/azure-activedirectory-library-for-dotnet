@@ -50,7 +50,7 @@ namespace Microsoft.Identity.Test.Unit.CoreTests.WsTrustTests
             CollectionAssert.AreEqual("plain_text_password".ToCharArray(), charPassword);
         }
 
-#if DESKTOP // no explicit support for netcore on ADAL
+// #if DESKTOP // no explicit support for netcore on ADAL
         [TestMethod]
         public void SecureStringPassword()
         {
@@ -66,7 +66,7 @@ namespace Microsoft.Identity.Test.Unit.CoreTests.WsTrustTests
             Assert.IsTrue(input.HasPassword());
             CollectionAssert.AreEqual("secure_string_password".ToCharArray(), charPassword);
         }
-#endif
+// #endif
     }
 #endif
 }

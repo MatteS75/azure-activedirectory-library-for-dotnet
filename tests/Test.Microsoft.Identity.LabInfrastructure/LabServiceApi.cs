@@ -102,7 +102,9 @@ namespace Microsoft.Identity.Test.LabInfrastructure
         {
             UriBuilder uriBuilder = new UriBuilder(requestUrl)
             {
+#pragma warning disable CA1305
                 Query = string.Join("&", queryDict.Select(x => x.Key + "=" + x.Value.ToString()))
+#pragma warning restore CA1305
             };
 
             return await GetLabResponseAsync(uriBuilder.ToString()).ConfigureAwait(false);

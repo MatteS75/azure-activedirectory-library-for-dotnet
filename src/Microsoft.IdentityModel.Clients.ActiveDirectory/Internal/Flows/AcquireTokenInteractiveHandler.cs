@@ -247,7 +247,7 @@ namespace Microsoft.IdentityModel.Clients.ActiveDirectory.Internal.Flows
                 AddPKCEAndState(authorizationRequestParameters);
             }
 
-#if DESKTOP
+#if DESKTOP || PORTABLE
             // Added form_post as a way to request to ensure we can handle large requests for dsts scenarios
             authorizationRequestParameters[OAuthParameter.ResponseMode] = OAuthResponseMode.FormPost;
 #endif

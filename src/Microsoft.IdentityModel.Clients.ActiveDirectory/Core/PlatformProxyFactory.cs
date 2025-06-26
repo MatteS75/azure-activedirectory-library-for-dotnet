@@ -47,6 +47,8 @@ namespace Microsoft.Identity.Core
             new UapPlatformProxy()
 #elif NETSTANDARD1_3
             new Netstandard13PlatformProxy()
+#elif NET8_0
+            new Netstandard13PlatformProxy()
 #elif DESKTOP
             new NetDesktopPlatformProxy()
 #endif

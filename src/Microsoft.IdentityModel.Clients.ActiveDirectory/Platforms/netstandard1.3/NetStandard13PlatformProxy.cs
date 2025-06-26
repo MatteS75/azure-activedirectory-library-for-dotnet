@@ -26,6 +26,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.Identity.Core.Cache;
 using Microsoft.Identity.Core.Http;
@@ -85,12 +86,14 @@ namespace Microsoft.Identity.Core
 
         public string GetProcessorArchitecture()
         {
-            return null;
+            return RuntimeInformation.ProcessArchitecture.ToString();
+            // return null;
         }
 
         public string GetOperatingSystem()
         {
-            return null;
+            return Environment.OSVersion.ToString();
+            // return null;
         }
 
         public string GetDeviceModel()

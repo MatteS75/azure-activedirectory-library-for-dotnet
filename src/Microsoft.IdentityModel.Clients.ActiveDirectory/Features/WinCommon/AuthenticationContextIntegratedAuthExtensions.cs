@@ -51,7 +51,7 @@ namespace Microsoft.IdentityModel.Clients.ActiveDirectory
             string clientId,
             UserCredential userCredential)
         {
-#if DESKTOP
+#if DESKTOP || PORTABLE
             if (userCredential is UserPasswordCredential)
             {
                 var userPasswordCredential = userCredential as UserPasswordCredential;
